@@ -209,7 +209,7 @@
         .location-item:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-3px); }
 
         /* --- 7. FAQ --- */
-        .faq-item { border-bottom: 1px solid #eee; margin-bottom: 10px; }
+        .faq-item { border-bottom:1px solid #eee; margin-bottom: 10px; }
         .faq-question { padding: 25px; cursor: pointer; font-weight: 700; font-size: 1.1rem; display: flex; justify-content: space-between; background: var(--white); color: var(--text); transition: var(--transition); }
         .faq-question:hover { color: var(--primary); padding-left: 30px; }
         .faq-answer { max-height: 0; overflow: hidden; transition: 0.4s cubic-bezier(0, 1, 0, 1); background: #fafafa; }
@@ -227,19 +227,19 @@
         .footer-col ul li a:hover { color: var(--accent); padding-left: 5px; }
         .copyright { text-align: center; border-top: 1px solid #222; padding-top: 30px; font-size: 0.9rem; }
 
-        /* --- POPUP MODAL --- */
-        .popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; display: none; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.5s ease; }
-        .popup-overlay.active { display: flex; opacity: 1; }
-        .popup-content { background: var(--white); width: 90%; max-width: 600px; padding: 0; border-radius: 10px; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); overflow: hidden; }
-        .popup-overlay.active .popup-content { transform: scale(1); }
-        .popup-header { background: var(--primary); color: var(--white); padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
-        .popup-header h3 { margin: 0; font-size: 1.4rem; }
-        .close-popup { background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; opacity: 0.8; }
-        .close-popup:hover { opacity: 1; }
-        .popup-body { padding: 40px 30px; text-align: center; }
-        .popup-deal { font-size: 3rem; font-weight: 800; color: var(--accent); margin: 10px 0; }
-        .popup-timer { color: #d9534f; font-weight: bold; margin-bottom: 20px; display: block; }
-        .popup-desc { color: var(--text-light); margin-bottom: 30px; }
+        /* --- PROMO MODAL (Renamed classes to avoid AdBlock) --- */
+        .promo-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; display: none; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.5s ease; }
+        .promo-overlay.active { display: flex; opacity: 1; }
+        .promo-content { background: var(--white); width: 90%; max-width: 600px; padding: 0; border-radius: 10px; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); overflow: hidden; }
+        .promo-overlay.active .promo-content { transform: scale(1); }
+        .promo-header { background: var(--primary); color: var(--white); padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .promo-header h3 { margin: 0; font-size: 1.4rem; }
+        .close-promo { background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; opacity: 0.8; }
+        .close-promo:hover { opacity: 1; }
+        .promo-body { padding: 40px 30px; text-align: center; }
+        .promo-deal { font-size: 3rem; font-weight: 800; color: var(--accent); margin: 10px 0; }
+        .promo-timer { color: #d9534f; font-weight: bold; margin-bottom: 20px; display: block; }
+        .promo-desc { color: var(--text-light); margin-bottom: 30px; }
 
         /* RESPONSIVE */
         @media (max-width: 992px) {
@@ -255,7 +255,7 @@
             .nav-links.active { display: flex; }
             .mobile-toggle { display: block; }
             .hero-text h1 { font-size: 2.2rem; }
-            .popup-content { width: 95%; margin: 10px; }
+            .promo-content { width: 95%; margin: 10px; }
         }
     </style>
 </head>
@@ -617,24 +617,24 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 LapDatWifi.com. All rights reserved.</p>
+                <p>&copy; 2025 LapDatWifi.com. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- POPUP MODAL -->
-    <div class="popup-overlay" id="promoPopup">
-        <div class="popup-content">
-            <div class="popup-header">
+    <!-- POPUP MODAL (DOMAIN SALE) -->
+    <div class="promo-overlay" id="promoPopup">
+        <div class="promo-content">
+            <div class="promo-header">
                 <h3>💎 Tên Miền Đang Bán</h3>
-                <button class="close-popup" id="closePopup">&times;</button>
+                <button class="close-promo" id="closePopup">&times;</button>
             </div>
-            <div class="popup-body">
+            <div class="promo-body">
                 <p style="text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: 1px;">Cơ hội sở hữu tên miền Premium</p>
-                <!-- Using the large deal text for the Domain Name -->
-                <div class="popup-deal">LapDatWifi.com</div>
-                <span class="popup-timer">🔥Dễ nhớ - Dễ tìm kiếm</span>
-                <p class="popup-desc">Tên miền này đang mở bán. Nếu bạn quan tâm sở hữu thương hiệu này cho doanh nghiệp lắp đặt mạng của mình, vui lòng liên hệ ngay để thương lượng.</p>
+                <!-- Using large deal text for Domain Name -->
+                <div class="promo-deal">LapDatWifi.com</div>
+                <span class="promo-timer">🔥 Dễ nhớ - Dễ tìm kiếm</span>
+                <p class="promo-desc">Tên miền này đang mở bán. Nếu bạn quan tâm sở hữu thương hiệu này cho doanh nghiệp lắp đặt mạng của mình, vui lòng liên hệ ngay để thương lượng.</p>
                 
                 <!-- This button opens an email draft -->
                 <a href="https://www.godaddy.com/forsale/lapdatwifi.com" class="btn btn-cta" onclick="document.getElementById('promoPopup').classList.remove('active')">Mua Ngay (Buy Now)</a>
@@ -665,7 +665,7 @@
                 });
             });
 
-            // POPUP LOGIC (3 Second Delay)
+            // POPUP LOGIC (3 Second Delay) - FIXED
             const popup = document.getElementById('promoPopup');
             const closeBtn = document.getElementById('closePopup');
             const noThanks = document.getElementById('noThanks');
@@ -673,14 +673,12 @@
             // Function to close popup
             function closePopup() {
                 popup.classList.remove('active');
-                localStorage.setItem('popupShown', 'true'); // Remember user
+                // localStorage.setItem('popupShown', 'true'); // Commented out for testing
             }
 
-            // Show after 3 seconds if not shown before
+            // Show after 3 seconds (Always show)
             setTimeout(() => {
-                if (!localStorage.getItem('popupShown')) {
-                    popup.classList.add('active');
-                }
+                popup.classList.add('active');
             }, 3000);
 
             // Close events
