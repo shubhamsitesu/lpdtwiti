@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block common system folders
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /junk/
+Disallow: /admin/
+Disallow: /private/
+
+# Block duplicate search parameters (if applicable)
+Disallow: /*?search=
+
+# Sitemap location
+Sitemap: https://lapdatwifi.com/sitemap.xml
